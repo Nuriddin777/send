@@ -1,4 +1,5 @@
 <?php
+
 $type = $_GET['type'];
 $token = $_GET['token'];
 $text = urldecode($_GET['text']);
@@ -12,6 +13,11 @@ $no=0;
 $id = file_get_contents($idbaza);
 $id=explode("\n",$id);
 $c = count($id);
+
+
+if(isset($type) and isset($token)){
+
+
 
 if($type == "sendMessage" and isset($text)){
 $s = time();
@@ -85,3 +91,7 @@ $result = base64_encode("<b>Jami azolar:</b> $c ta
 <b>Yuborilmadi:</b> $no ta
 <b>Yuborish uchun sarflangan vaqt:</b> $n s");
 print $result;
+
+}else{
+echo "<h1>XATO</h1>";
+}
